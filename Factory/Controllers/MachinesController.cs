@@ -18,6 +18,7 @@ namespace MechanicManager.Controllers
 
     public ActionResult Index()
     {
+      ViewBag.PageTitle = "Machine List";
       return View();
     }
   }

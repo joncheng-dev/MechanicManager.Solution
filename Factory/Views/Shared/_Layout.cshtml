@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body>
-    @RenderBody()
+    <div class="container">
+      <h4>@Html.ActionLink("Home", "Index", "Home") | @Html.ActionLink("Engineer List", "Index", "Engineers") | @Html.ActionLink("Machine List", "Index", "Machines")</h4>
+      <hr/>
+      <h1>@ViewBag.PageTitle</h1>
+      <hr/>
+      @RenderBody()
+    </div>
   </body>
 </html>

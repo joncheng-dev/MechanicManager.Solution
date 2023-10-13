@@ -6,6 +6,7 @@ namespace MechanicManager.Controllers
   {
     public ActionResult Index()
     {
+      ViewBag.PageTitle = "Mechanic Manager";
       return View();
     }
   }
