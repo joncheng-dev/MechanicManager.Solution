@@ -23,5 +23,18 @@ namespace MechanicManager.Controllers
       return View(allEngineers);
     }
 
+    public ActionResult Create()
+    {
+      ViewBag.PageTitle = "Add an Engineer";
+      return View();
+    }
+
+    [HttpPost]
+    public ActionResult Create(Engineer newAdd)
+    {
+      _db.Engineers.Add(newAdd);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
