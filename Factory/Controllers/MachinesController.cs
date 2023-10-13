@@ -57,5 +57,21 @@ namespace MechanicManager.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    public ActionResult Delete(int id)
+    {
+      ViewBag.PageTitle = "Delete Entry";
+      Machine targetMachine = _db.Machines.FirstOrDefault(entry => entry.MachineId == id);
+      return View(targetMachine);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      Machine targetMachine = _db.Machines.FirstOrDefault(entry => entry.MachineId == id);
+      _db.Machines.Remove(targetMachine);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
