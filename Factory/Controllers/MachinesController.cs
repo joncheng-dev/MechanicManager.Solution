@@ -39,7 +39,9 @@ namespace MechanicManager.Controllers
     public ActionResult Details(int id)
     {
       ViewBag.PageTitle = "Machine Details";
-      Machine targetMachine = _db.Machines.FirstOrDefault(entry => entry.MachineId == id);
+      Machine targetMachine = _db.Machines.Include(entry => entry.JoinEntities)
+                                          .ThenInclude(join => join.Engineer)
+                                          .FirstOrDefault(entry => entry.MachineId == id);
       return View(targetMachine);
     }
 
@@ -72,6 +74,36 @@ namespace MechanicManager.Controllers
       _db.Machines.Remove(targetMachine);
       _db.SaveChanges();
       return RedirectToAction("Index");
+    }
+
+    public ActionResult AddEngineer(int id)
+    {
+      Machine targetMachine = _db.Machines.FirstOrDefault(entry => entry.MachineId == id);
+      ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "Name");
+      return View(targetMachine);
+    }
+
+    [HttpPost]
+    public ActionResult AddEngineer(Machine targetMachine, int engiId)
+    {
+#nullable enable
+      EngineerMachine? joinEntity = _db.EngineerMachines.FirstOrDefault(join => (join.EngineerId == engiId && join.MachineId == targetMachine.MachineId));
+#nullable disable
+      if (joinEntity == null && engiId != 0)
+      {
+        _db.EngineerMachines.Add(new EngineerMachine() { EngineerId = engiId, MachineId = targetMachine.MachineId });
+        _db.SaveChanges();
+      }
+      return RedirectToAction("Details", new { id = targetMachine.MachineId });
+    }
+
+    [HttpPost]
+    public ActionResult DeleteJoin(int joinId)
+    {
+      EngineerMachine joinEntry = _db.EngineerMachines.FirstOrDefault(entry => entry.EngineerMachineId == joinId);
+      _db.EngineerMachines.Remove(joinEntry);
+      _db.SaveChanges();
+      return RedirectToAction("Details", new { id = joinEntry.MachineId });
     }
   }
 }
