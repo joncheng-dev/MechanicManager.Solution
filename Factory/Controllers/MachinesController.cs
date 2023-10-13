@@ -42,5 +42,20 @@ namespace MechanicManager.Controllers
       Machine targetMachine = _db.Machines.FirstOrDefault(entry => entry.MachineId == id);
       return View(targetMachine);
     }
+
+    public ActionResult Edit(int id)
+    {
+      ViewBag.PageTitle = "Edit Machine";
+      Machine targetMachine = _db.Machines.FirstOrDefault(entry => entry.MachineId == id);
+      return View(targetMachine);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Machine machineToEdit)
+    {
+      _db.Machines.Update(machineToEdit);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }

@@ -1,0 +1,23 @@
+@{
+  Layout = "_Layout";
+}
+
+@model MechanicManager.Models.Machine
+
+<p>Edit the information below and click Save to submit changes.</p>
+<div class="row">
+  <div class="col-5">
+    @using (Html.BeginForm())
+    {
+      @Html.HiddenFor(entry => entry.MachineId)
+
+      @Html.LabelFor(entry => entry.ModelName)
+      @Html.EditorFor(entry => entry.ModelName)
+
+      <input type="submit" value="Save" />
+    }
+  </div>
+</div>
+
+<hr/>
+<p>@Html.ActionLink("Back to Details", "Details", new { id = Model.MachineId })</p>
