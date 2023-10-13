@@ -73,5 +73,26 @@ namespace MechanicManager.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    public ActionResult AddMachine(int id)
+    {
+      Engineer targetEngineer = _db.Engineers.FirstOrDefault(entry => entry.EngineerId == id);
+      ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "ModelName");
+      return View(targetEngineer);
+    }
+
+    [HttpPost]
+    public ActionResult AddMachine(Engineer entry, int machineId)
+    {
+#nullable enable
+      EngineerMachine? joinEntity = _db.EngineerMachines.FirstOrDefault(join => (join.MachineId == machineId && join.EngineerId == entry.EngineerId));
+#nullable disable
+      if (joinEntity == null && machineId != 0)
+      {
+        _db.EngineerMachines.Add(new EngineerMachine() { MachineId = machineId, EngineerId = entry.EngineerId });
+        _db.SaveChanges();
+      }
+      return RedirectToAction("Details", new { id = entry.EngineerId });
+    }
   }
 }

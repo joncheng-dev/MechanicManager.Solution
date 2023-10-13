@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model MechanicManager.Models.Engineer
+
+<p>Add a machine this engineer is licensed to work on</p>
+<div class="row">
+  <div class="col-5">
+    @using (Html.BeginForm())
+    {
+      @Html.HiddenFor(entry => entry.EngineerId)
+      @Html.Label("Select machine")
+      @Html.DropDownList("MachineId")
+
+    <input type="submit" value="Save" />
+    }
+  </div>
+</div>
+<hr/>
+<p>@Html.ActionLink("Back to Details", "Details", new { id = Model.EngineerId })</p>
