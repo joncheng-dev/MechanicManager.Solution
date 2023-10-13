@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@using MechanicManager.Models
+@model MechanicManager.Models.Engineer
+
+<div class="row">
+  <div class="col-5">
+    <h4>Details</h4>
+    <p><strong>@Html.DisplayNameFor(targetEngineer => targetEngineer.Name)</strong>: @Html.DisplayFor(targetEngineer => targetEngineer.Name)</p>
+  </div>
+  <div class="col-7">
+    <h4>Machines Licensed to Repair</h4>
+  </div>  
+</div>
+
+<hr/>
+<p>@Html.ActionLink("Back to Engineers List", "Index")</p>

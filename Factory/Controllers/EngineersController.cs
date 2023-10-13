@@ -36,5 +36,12 @@ namespace MechanicManager.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    public ActionResult Details(int id)
+    {
+      ViewBag.PageTitle = "Engineer Details";
+      Engineer targetEngineer = _db.Engineers.FirstOrDefault(entry => entry.EngineerId == id);
+      return View(targetEngineer);
+    }
   }
 }
