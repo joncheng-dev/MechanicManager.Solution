@@ -35,5 +35,12 @@ namespace MechanicManager.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    public ActionResult Details(int id)
+    {
+      ViewBag.PageTitle = "Machine Details";
+      Machine targetMachine = _db.Machines.FirstOrDefault(entry => entry.MachineId == id);
+      return View(targetMachine);
+    }
   }
 }

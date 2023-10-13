@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@using MechanicManager.Models
+@model MechanicManager.Models.Machine
+
+<div class="row">
+  <div class="col-5">
+    <h4>Machine</h4>
+    <p><strong>Model Name</strong>: @Html.DisplayFor(targetMachine => targetMachine.ModelName)</p>
+  </div>
+  <div class="col-7">
+    <h4>Engineers Licensed For Repair</h4>
+    <p><strong></strong>: </p>
+  </div>  
+</div>
+
+<hr/>
+<p>@Html.ActionLink("Edit Details", "Edit", new { id = Model.MachineId })</p>
+<p>@Html.ActionLink("Delete Entry", "Delete", new { id = Model.MachineId })</p>
+<p>@Html.ActionLink("Back to Machines List", "Index")</p>
