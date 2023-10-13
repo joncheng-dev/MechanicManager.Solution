@@ -1,3 +1,22 @@
 @{
   Layout = "_Layout";
 }
+
+@using MechanicManager.Models;
+
+@if(@Model.Count == 0)
+{
+  <p>No machines are currently in the database.</p>
+}
+else 
+{
+  <ul>
+    @foreach(Machine entry in Model)
+    {
+      <li>@Html.ActionLink($"{entry.ModelName}", "Details", new {id = entry.MachineId})</li>
+    }
+  </ul>  
+}
+
+<hr/>
+<p>@Html.ActionLink("Add Machine to database", "Create")</p>

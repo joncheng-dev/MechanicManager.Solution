@@ -19,8 +19,7 @@ namespace MechanicManager.Controllers
     public ActionResult Index()
     {
       ViewBag.PageTitle = "Engineer List";
-      List<Engineer> allEngineers = _db.Engineers.ToList();
-      return View(allEngineers);
+      return View(_db.Engineers.ToList());
     }
 
     public ActionResult Create()

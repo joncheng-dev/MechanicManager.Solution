@@ -19,7 +19,21 @@ namespace MechanicManager.Controllers
     public ActionResult Index()
     {
       ViewBag.PageTitle = "Machine List";
+      return View(_db.Machines.ToList());
+    }
+
+    public ActionResult Create()
+    {
+      ViewBag.PageTitle = "Add a Machine";
       return View();
+    }
+
+    [HttpPost]
+    public ActionResult Create(Machine newAdd)
+    {
+      _db.Machines.Add(newAdd);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
     }
   }
 }

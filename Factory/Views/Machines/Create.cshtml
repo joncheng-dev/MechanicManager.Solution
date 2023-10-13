@@ -1,0 +1,15 @@
+@{
+  Layout = "_Layout";
+}
+
+@model MechanicManager.Models.Machine
+
+<p>Complete the form to add a machine to the database.</p>
+
+@using (Html.BeginForm())
+{
+  <p>Model Name @Html.TextBoxFor(newEntry => newEntry.ModelName) <input type="submit" value="Add to Database"/></p>
+}
+
+<hr/>
+<p>@Html.ActionLink("Back to Machine List", "Index")</p>
