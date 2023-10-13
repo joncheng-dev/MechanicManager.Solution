@@ -96,5 +96,14 @@ namespace MechanicManager.Controllers
       }
       return RedirectToAction("Details", new { id = entry.EngineerId });
     }
+
+    [HttpPost]
+    public ActionResult DeleteJoin(int joinId)
+    {
+      EngineerMachine joinEntry = _db.EngineerMachines.FirstOrDefault(entry => entry.EngineerMachineId == joinId);
+      _db.EngineerMachines.Remove(joinEntry);
+      _db.SaveChanges();
+      return RedirectToAction("Details", new { id = joinEntry.EngineerId });
+    }
   }
 }

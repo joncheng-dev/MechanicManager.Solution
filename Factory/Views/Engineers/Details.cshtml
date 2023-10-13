@@ -22,8 +22,8 @@
       <ul>
         @foreach(EngineerMachine joinEntry in Model.JoinEntities)
         {
-          <li>Tag: @joinEntry.Machine.ModelName</li>
-          @using (Html.BeginForm("DeleteJoin", "Machines"))
+          <li>Machine: @joinEntry.Machine.ModelName</li>
+          @using (Html.BeginForm("DeleteJoin", "Engineers"))
           {
             @Html.Hidden("joinId", @joinEntry.EngineerMachineId)
             <input type="submit" value="Delete"/>
