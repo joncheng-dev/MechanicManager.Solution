@@ -1,3 +1,23 @@
 @{
   Layout = "_Layout";
 }
+
+@using MechanicManager.Models;
+@model List<MechanicManager.Models.Engineer>;
+
+@if(@Model.Count == 0)
+{
+  <p>No engineers are currently in the database.</p>
+}
+else 
+{
+  <ul>
+    @foreach(Engineer entry in Model)
+    {
+      <li>@Html.ActionLink($"{entry.Name}", "Details", new {id = entry.EngineerId})</li>
+    }
+  </ul>
+}
+
+<hr/>
+<p>@Html.ActionLink("Add Engineer", "Create")</p>
