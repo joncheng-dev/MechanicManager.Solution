@@ -28,7 +28,7 @@
   - _implementing a many-to-many database relationship,_
   - _being able to view both sides of the many-to-many relationship,_
   - _CRUD functionality (create, read, update, and delete) for at least one of the classes,_
-  - _and setting up the project as well as providing instruction to any users so that build files and sensitive information is are tracked by Git (i.e. `.gitignore`, `appsettings.json`, `bin`, `obj`)._
+  - _and setting up the project as well as providing instruction to any users so that build files and sensitive information are not tracked by Git (i.e. `.gitignore`, `appsettings.json`, `bin`, `obj`)._
 
 ## Setup/Installation Requirements
 
@@ -50,12 +50,12 @@ _3. Clone the repository from the GitHub link by entering in this command:_
 
 _4. Navigate to the project's production directory `Factory`, and create a new file called `appsettings.json`._
 
-_5. Within `appsettings.json`, put in the following code, replacing the `uid`, and `pwd` values with your username and password for MySQL._
+_5. Within `appsettings.json`, add the following code, replacing the `uid`, and `pwd` values with your username and password for MySQL. Under `database`, add any name that you deem fit -- although `mechanic_manager_db` is suggested for organization sake and clarity of purpose._
 
 ```json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Port=3306;database=mechanic_manager_db;uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];"
+    "DefaultConnection": "Server=localhost;Port=3306;database=[YOUR-DATABASE-NAME-HERE];uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];"
   }
 }
 ```
