@@ -39,7 +39,9 @@ namespace MechanicManager.Controllers
     public ActionResult Details(int id)
     {
       ViewBag.PageTitle = "Engineer Details";
-      Engineer targetEngineer = _db.Engineers.FirstOrDefault(entry => entry.EngineerId == id);
+      Engineer targetEngineer = _db.Engineers.Include(entry => entry.JoinEntities)
+                                             .ThenInclude(join => join.Machine)
+                                             .FirstOrDefault(entry => entry.EngineerId == id);
       return View(targetEngineer);
     }
 

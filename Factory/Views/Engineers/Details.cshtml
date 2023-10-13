@@ -12,7 +12,25 @@
   </div>
   <div class="col-7">
     <h4>Machines Licensed to Repair</h4>
-    <p><strong></strong>: </p>
+    @if(@Model.JoinEntities.Count == 0)
+    {
+      <p>This engineer does not have any machines listed as licensed to repair yet.</p>
+    }
+    else
+    {
+      <h4>This engineer has the following machines listed:</h4>
+      <ul>
+        @foreach(EngineerMachine joinEntry in Model.JoinEntities)
+        {
+          <li>Tag: @joinEntry.Machine.ModelName</li>
+          @using (Html.BeginForm("DeleteJoin", "Machines"))
+          {
+            @Html.Hidden("joinId", @joinEntry.EngineerMachineId)
+            <input type="submit" value="Delete"/>
+          }
+        }
+      </ul>
+    }
   </div>  
 </div>
 
