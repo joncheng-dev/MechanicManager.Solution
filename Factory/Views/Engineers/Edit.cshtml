@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model MechanicManager.Models.Engineer
+
+<div class="row">
+  <div class="col-5">
+    @using (Html.BeginForm())
+    {
+      @Html.HiddenFor(entry => entry.EngineerId)
+
+      @Html.LabelFor(entry => entry.Name)
+      @Html.EditorFor(entry => entry.Name)
+
+      <input type="submit" value="Save" />
+    }
+  </div>
+</div>
+
+<hr/>
+<p>@Html.ActionLink("Back to Details", "Details", new { id = Model.EngineerId })</p>

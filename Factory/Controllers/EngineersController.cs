@@ -43,5 +43,20 @@ namespace MechanicManager.Controllers
       Engineer targetEngineer = _db.Engineers.FirstOrDefault(entry => entry.EngineerId == id);
       return View(targetEngineer);
     }
+
+    public ActionResult Edit(int id)
+    {
+      ViewBag.PageTitle = "Edit Engineer";
+      Engineer targetEngineer = _db.Engineers.FirstOrDefault(entry => entry.EngineerId == id);
+      return View(targetEngineer);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Engineer engineerToEdit)
+    {
+      _db.Engineers.Update(engineerToEdit);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }

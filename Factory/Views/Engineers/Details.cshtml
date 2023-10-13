@@ -7,13 +7,15 @@
 
 <div class="row">
   <div class="col-5">
-    <h4>Details</h4>
+    <h4>Engineer</h4>
     <p><strong>@Html.DisplayNameFor(targetEngineer => targetEngineer.Name)</strong>: @Html.DisplayFor(targetEngineer => targetEngineer.Name)</p>
   </div>
   <div class="col-7">
     <h4>Machines Licensed to Repair</h4>
+    <p><strong></strong>: </p>
   </div>  
 </div>
 
 <hr/>
+<p>@Html.ActionLink("Edit Details", "Edit", new { id = Model.EngineerId })</p>
 <p>@Html.ActionLink("Back to Engineers List", "Index")</p>
