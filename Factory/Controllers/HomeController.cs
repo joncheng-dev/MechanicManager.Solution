@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MechanicManager.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MechanicManager.Controllers
 {
@@ -17,7 +19,7 @@ namespace MechanicManager.Controllers
       ViewBag.PageTitle = "Mechanic Manager";
       Engineer[] engineersArray = _db.Engineers.ToArray();
       Machine[] machinesArray = _db.Machines.ToArray();
-      Dictionary<object[], object[]> model = new Dictionary<object[], object[]>();
+      Dictionary<string, object[]> model = new Dictionary<string, object[]>();
       model.Add("engineers", engineersArray);
       model.Add("machines", machinesArray);
       return View(model);

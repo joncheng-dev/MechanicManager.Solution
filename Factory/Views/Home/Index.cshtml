@@ -2,11 +2,39 @@
   Layout = "_Layout";
 }
 
+@using MechanicManager.Models;
+
 <div class="row">
   <div class="col-6">
     <h4>Engineers</h4>
+    @if(Model["engineers"].Length == 0)
+    {
+      <p>No engineers have yet been added to the database.</p>
+    }
+    else
+    {
+      <ul>
+        @foreach(Engineer entry in Model["engineers"])
+        {
+          <li>@Html.ActionLink(@entry.Name, "Details", "Engineers", new { id = @entry.EngineerId })</li>
+        }
+      </ul>
+    }
   </div>
   <div class="col-6">
     <h4>Machines</h4>
+    @if(Model["machines"].Length == 0)
+    {
+      <p>No machines have yet been added to the database.</p>
+    }
+    else
+    {
+      <ul>
+        @foreach(Machine entry in Model["machines"])
+        {
+          <li>@Html.ActionLink(@entry.ModelName, "Details", "Machines", new { id = @entry.MachineId })</li>
+        }
+      </ul>
+    }    
   </div>  
 </div>
