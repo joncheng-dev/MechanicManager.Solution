@@ -84,14 +84,14 @@ namespace MechanicManager.Controllers
     }
 
     [HttpPost]
-    public ActionResult AddEngineer(Machine targetMachine, int engiId)
+    public ActionResult AddEngineer(Machine targetMachine, int engineerId)
     {
       #nullable enable
-      EngineerMachine? joinEntity = _db.EngineerMachines.FirstOrDefault(join => (join.EngineerId == engiId && join.MachineId == targetMachine.MachineId));
+      EngineerMachine? joinEntity = _db.EngineerMachines.FirstOrDefault(join => join.EngineerId == engineerId && join.MachineId == targetMachine.MachineId);
       #nullable disable
-      if (joinEntity == null && engiId != 0)
+      if (joinEntity == null && engineerId != 0)
       {
-        _db.EngineerMachines.Add(new EngineerMachine() { EngineerId = engiId, MachineId = targetMachine.MachineId });
+        _db.EngineerMachines.Add(new EngineerMachine() { MachineId = targetMachine.MachineId, EngineerId = engineerId });
         _db.SaveChanges();
       }
       return RedirectToAction("Details", new { id = targetMachine.MachineId });
