@@ -6,11 +6,10 @@
 
 <p>Complete the form to add a machine to the database.</p>
 <p>@Html.ValidationMessageFor(newEntry => newEntry.ModelName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(newEntry => newEntry.ModelName)
-  @Html.TextBoxFor(newEntry => newEntry.ModelName) 
-  <input type="submit" value="Add to Database"/>
+  <p>Model Name @Html.TextBoxFor(newEntry => newEntry.ModelName)<input type="submit" value="Add to Database"/></p>
 }
 
 <hr/>
