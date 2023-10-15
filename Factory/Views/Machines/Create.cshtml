@@ -5,7 +5,7 @@
 @model MechanicManager.Models.Machine
 
 <p>Complete the form to add a machine to the database.</p>
-
+<p>@Html.ValidationMessageFor(newEntry => newEntry.ModelName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 @using (Html.BeginForm())
 {
   @Html.LabelFor(newEntry => newEntry.ModelName)

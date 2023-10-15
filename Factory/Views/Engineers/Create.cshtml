@@ -5,7 +5,7 @@
 @model MechanicManager.Models.Engineer
 
 <p>Complete the form to add an engineer to the database.</p>
-
+<p>@Html.ValidationMessageFor(newEntry => newEntry.Name, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 @using (Html.BeginForm())
 {
   @Html.LabelFor(newEntry => newEntry.Name)

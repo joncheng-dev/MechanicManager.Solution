@@ -31,9 +31,17 @@ namespace MechanicManager.Controllers
     [HttpPost]
     public ActionResult Create(Machine newAdd)
     {
-      _db.Machines.Add(newAdd);
-      _db.SaveChanges();
-      return RedirectToAction("Index");
+      if(!ModelState.IsValid)
+      {
+        ViewBag.PageTitle = "Add a Machine";
+        return View(newAdd);
+      }
+      else
+      {
+        _db.Machines.Add(newAdd);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
+      }      
     }
 
     public ActionResult Details(int id)
@@ -55,9 +63,17 @@ namespace MechanicManager.Controllers
     [HttpPost]
     public ActionResult Edit(Machine machineToEdit)
     {
-      _db.Machines.Update(machineToEdit);
-      _db.SaveChanges();
-      return RedirectToAction("Index");
+      if(!ModelState.IsValid)
+      {
+        ViewBag.PageTitle = "Edit Machine";
+        return View(machineToEdit);
+      }
+      else
+      {      
+        _db.Machines.Update(machineToEdit);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
+      }
     }
 
     public ActionResult Delete(int id)
