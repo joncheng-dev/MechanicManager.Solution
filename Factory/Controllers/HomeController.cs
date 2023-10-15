@@ -16,7 +16,7 @@ namespace MechanicManager.Controllers
 
     public ActionResult Index()
     {
-      ViewBag.PageTitle = "Mechanic Manager";
+      ViewBag.PageTitle = "Welcome to Dr. Sillystringz's Factory";
       Engineer[] engineersArray = _db.Engineers.ToArray();
       Machine[] machinesArray = _db.Machines.ToArray();
       Dictionary<string, object[]> model = new Dictionary<string, object[]>();

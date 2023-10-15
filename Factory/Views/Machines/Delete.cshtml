@@ -6,7 +6,7 @@
 
 <p>Are you sure you want to delete this Machine entry from the database?</p>
 
-<p><strong>Model Name</strong>: @Html.DisplayFor(targetMachine => targetMachine.ModelName)</p>
+<p><strong>@Html.DisplayNameFor(targetMachine => targetMachine.ModelName)</strong>: @Html.DisplayFor(targetMachine => targetMachine.ModelName)</p>
 
 @using(Html.BeginForm())
 {

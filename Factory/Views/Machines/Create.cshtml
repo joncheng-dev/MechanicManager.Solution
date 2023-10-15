@@ -8,7 +8,9 @@
 
 @using (Html.BeginForm())
 {
-  <p>Model Name @Html.TextBoxFor(newEntry => newEntry.ModelName) <input type="submit" value="Add to Database"/></p>
+  @Html.LabelFor(newEntry => newEntry.ModelName)
+  @Html.TextBoxFor(newEntry => newEntry.ModelName) 
+  <input type="submit" value="Add to Database"/>
 }
 
 <hr/>

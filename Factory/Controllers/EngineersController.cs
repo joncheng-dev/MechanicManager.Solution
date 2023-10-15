@@ -86,9 +86,9 @@ namespace MechanicManager.Controllers
     [HttpPost]
     public ActionResult AddMachine(Engineer entry, int machineId)
     {
-#nullable enable
+      #nullable enable
       EngineerMachine? joinEntity = _db.EngineerMachines.FirstOrDefault(join => (join.MachineId == machineId && join.EngineerId == entry.EngineerId));
-#nullable disable
+      #nullable disable
       if (joinEntity == null && machineId != 0)
       {
         _db.EngineerMachines.Add(new EngineerMachine() { MachineId = machineId, EngineerId = entry.EngineerId });

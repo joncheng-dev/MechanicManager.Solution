@@ -8,29 +8,28 @@
 <div class="row">
   <div class="col-5">
     <h4>Machine</h4>
-    <p><strong>Model Name</strong>: @Html.DisplayFor(targetMachine => targetMachine.ModelName)</p>
+    <p><strong>@Html.DisplayNameFor(targetMachine => targetMachine.ModelName)</strong>: @Html.DisplayFor(targetMachine => targetMachine.ModelName)</p>
   </div>
   <div class="col-7">
-    <h4>Engineers Licensed For Repair</h4>
-      @if(@Model.JoinEntities.Count == 0)
-      {
-        <p>This machine does not have any engineers listed as licensed for repair yet.</p>
-      }
-      else
-      {
-        <h4>This machine has the following engineers listed:</h4>
-        <ul>
-          @foreach(EngineerMachine joinEntry in Model.JoinEntities)
+    <h4>Machine's Engineers Licensed For Repair</h4>
+    @if(@Model.JoinEntities.Count == 0)
+    {
+      <p>This machine does not have any engineers listed as licensed for repair yet.</p>
+    }
+    else
+    {
+      <ul>
+        @foreach(EngineerMachine joinEntry in Model.JoinEntities)
+        {
+          <li>Engineer: @joinEntry.Engineer.Name</li>
+          @using (Html.BeginForm("DeleteJoin", "Machines"))
           {
-            <li>Engineer: @joinEntry.Engineer.Name</li>
-            @using (Html.BeginForm("DeleteJoin", "Machines"))
-            {
-              @Html.Hidden("joinId", @joinEntry.EngineerMachineId)
-              <input type="submit" value="Delete"/>
-            }
-          }          
-        </ul>
-      }
+            @Html.Hidden("joinId", @joinEntry.EngineerMachineId)
+            <input type="submit" value="Delete"/>
+          }
+        }          
+      </ul>
+    }
   </div>  
 </div>
 

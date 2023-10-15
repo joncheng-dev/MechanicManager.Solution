@@ -11,14 +11,13 @@
     <p><strong>@Html.DisplayNameFor(targetEngineer => targetEngineer.Name)</strong>: @Html.DisplayFor(targetEngineer => targetEngineer.Name)</p>
   </div>
   <div class="col-7">
-    <h4>Machines Licensed to Repair</h4>
+    <h4>Engineer's Machines Licensed to Repair</h4>
     @if(@Model.JoinEntities.Count == 0)
     {
       <p>This engineer does not have any machines listed as licensed to repair yet.</p>
     }
     else
     {
-      <h4>This engineer has the following machines listed:</h4>
       <ul>
         @foreach(EngineerMachine joinEntry in Model.JoinEntities)
         {

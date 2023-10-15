@@ -10,7 +10,10 @@
     @using (Html.BeginForm())
     {
       @Html.HiddenFor(entry => entry.MachineId)
-      <p>Model Name @Html.EditorFor(entry => entry.ModelName) <input type="submit" value="Save" /></p>  
+      
+      @Html.LabelFor(entry => entry.ModelName)
+      @Html.EditorFor(entry => entry.ModelName) 
+      <input type="submit" value="Save" />
     }
   </div>
 </div>
