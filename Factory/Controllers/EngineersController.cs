@@ -72,7 +72,7 @@ namespace MechanicManager.Controllers
       {
         _db.Engineers.Update(engineerToEdit);
         _db.SaveChanges();
-        return RedirectToAction("Index");
+        return RedirectToAction("Details", new { id = engineerToEdit.EngineerId });
       }
     }
 

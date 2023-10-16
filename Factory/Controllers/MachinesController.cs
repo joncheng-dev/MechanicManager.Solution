@@ -72,7 +72,7 @@ namespace MechanicManager.Controllers
       {      
         _db.Machines.Update(machineToEdit);
         _db.SaveChanges();
-        return RedirectToAction("Index");
+        return RedirectToAction("Details", new { id = machineToEdit.MachineId });
       }
     }
 
