@@ -40,9 +40,9 @@
   - _CRUD functionality (create, read, update, and delete) for at least one of the classes,_
   - _and setting up the project as well as providing instruction to any users so that build files and sensitive information are not tracked by Git (i.e. `.gitignore`, `appsettings.json`, `bin`, `obj`)._
 
-- _Below: schema depicting the many-to-many database relationship._
+- _Below: Schema depicting the many-to-many database relationship._
 <p align="center">
-<img src="./Factory/wwwroot/img/MechanicManagerDbSchema.jpg" alt="screenshot of database schema" width="60%">
+<img src="./Factory/wwwroot/img/MechanicManagerDbSchema.jpg" alt="screenshot of database schema" width="70%">
 </p>
 
 ## Setup/Installation Requirements
