@@ -31,7 +31,7 @@ namespace MechanicManager.Controllers
     [HttpPost]
     public ActionResult Create(Engineer newAdd)
     {
-      if(!ModelState.IsValid)
+      if (!ModelState.IsValid)
       {
         ViewBag.PageTitle = "Add an Engineer";
         return View(newAdd);
@@ -63,7 +63,7 @@ namespace MechanicManager.Controllers
     [HttpPost]
     public ActionResult Edit(Engineer engineerToEdit)
     {
-      if(!ModelState.IsValid)
+      if (!ModelState.IsValid)
       {
         ViewBag.PageTitle = "Edit Engineer";
         return View(engineerToEdit);
