@@ -87,7 +87,7 @@ _6. In the terminal, while in the project's production directory `Factory`, run 
 
 ## Running the Project
 
-- _Navigate to the project's production directory `Factory`. In the command line, run this command to compile and execute the web application. A new browser window should open, allowing you to interact with it._
+- _In the command line, while in the project's production directory `Factory`, run this command to compile and execute the web application. A new browser window should open, allowing you to interact with it._
 
 > ```bash
 > $ dotnet watch run
