@@ -19,7 +19,7 @@
 
 ## Description
 
-- _Upon landing at the home page, the user is presented with lists of both existing engineers and machines in the database. If either of the lists are empty, placeholder text will be there instead. Here, the user can choose to populate either list -- engineer or machine. Clicking the engineers or machines listed allows the user to see their/its details. From here, the user may choose to edit or update details._
+- _Upon landing at the home page, the user is presented with lists of both existing engineers and machines in the database. If either of the lists are empty, placeholder text will be there instead. Here, the user can choose to populate either list -- engineer or machine. Clicking the engineers or machines listed allows the user to see their/its details. From here, the user may choose to edit details or delete the entry._
 - _The user can link objects from one class to another. For instance:_
   - _For a specified engineer, a specified machine can be added to their list, noting that the engineer is able to repair said machine._
   - _The relationship is mirrored in that an engineer is able to be added to a machine's list._
