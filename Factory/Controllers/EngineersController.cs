@@ -95,6 +95,9 @@ namespace MechanicManager.Controllers
     public ActionResult AddMachine(int id)
     {
       Engineer targetEngineer = _db.Engineers.FirstOrDefault(entry => entry.EngineerId == id);
+      // Grab list of Machines from database. In the view, we'll check the ViewBag.MachinesList if the list is empty
+      ViewBag.MachinesList = _db.Machines.ToList();
+      // In the view, the dropdown list will only appear if the above list is not empty
       ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "ModelName");
       return View(targetEngineer);
     }

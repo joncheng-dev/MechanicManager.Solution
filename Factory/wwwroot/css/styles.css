@@ -10,3 +10,7 @@ a {
 a:hover {
   color: #35a29f;
 }
+
+.text-danger {
+  font-weight: 600;
+}

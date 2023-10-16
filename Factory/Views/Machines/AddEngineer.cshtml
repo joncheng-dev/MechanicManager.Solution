@@ -7,14 +7,22 @@
 <p>Add an engineer licensed to work on this machine.</p>
 <div class="row">
   <div class="col-5">
-    @using (Html.BeginForm())
+    @if(@ViewBag.EngineersList.Count == 0)
     {
-      @Html.HiddenFor(entry => entry.MachineId)
-      @Html.Label("Select engineer")
-      @Html.DropDownList("EngineerId")
-
-      <input type="submit" value="Save" />
+      <p class="text-danger">It appears the list of engineers is empty. Add to the list of engineers before attempting to assign a machine to them.</p>
+      <p>@Html.ActionLink("Add Engineer to database", "Create", "Engineers")</p>
     }
+    else
+    {
+      @using (Html.BeginForm())
+      {
+        @Html.HiddenFor(entry => entry.MachineId)
+        @Html.Label("Select engineer")
+        @Html.DropDownList("EngineerId")
+
+        <input type="submit" value="Save" />
+      }
+    }  
   </div>
 </div>
 <hr/>
