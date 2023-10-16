@@ -19,20 +19,18 @@
 
 ## Description
 
-- _Upon landing at the home page, the user is presented with lists of both existing engineers and machines in the database. If either of the lists are empty, placeholder text will be there instead._
-- _Here, the user can choose to populate either list -- engineer or machine._
-- _Clicking the engineers or machines listed allows the user to see their/its details._
+- _Upon landing at the home page, the user is presented with lists of both existing engineers and machines in the database. If either of the lists are empty, placeholder text will be there instead. Here, the user can choose to populate either list -- engineer or machine. Clicking the engineers or machines listed allows the user to see their/its details. From here, the user may choose to edit or update details._
 - _The user can link objects from one class to another. For instance:_
   - _For a specified engineer, a specified machine can be added to their list, noting that the engineer is able to repair said machine._
   - _The relationship is mirrored in that an engineer is able to be added to a machine's list._
-- _A join relationship can be removed from either perspective -- engineer or machine -- and it will be reflected upon viewing details from the other's direction._
+- _The above mentioned join relationship can be removed from either perspective -- engineer or machine -- and it will be reflected upon viewing details from the other's direction._
 - _Additional Details:_
+  - _This web application was written using C#, run using .NET framework, its ability to run in a browser enabled using the ASP.NET Core MVC framework, and database query and relationships handled using Entity Framework Core._
   - _Utilizes a many-to-many relationship between the two classes -- engineer and machine._
   - _Data annotations and conditionals are in place to validate user input._
   - _Full CRUD functionality works for both classes._
-- _This web application was written using C#, run using .NET framework, its ability to run in a browser enabled using the ASP.NET Core MVC framework, and database query and relationships handled using Entity Framework Core._
-- _Styling uses CSS and Bootstrap._
-- _Data storage is managed using MySQL. Entity Framework Core .NET Command-line Tools (or dotnet ef) is used for database version control -- migrations are created to tell MySQL how the database is structured and updated as needed._
+  - _Styling uses CSS and Bootstrap._
+  - _Data storage is managed using MySQL. Entity Framework Core .NET Command-line Tools (or dotnet ef) is used for database version control -- migrations are created to tell MySQL how the database is structured and updated as needed._
 - _Key objectives for this project include:_
 
   - _using Entity Framework Core for database communication,_
@@ -42,7 +40,7 @@
   - _CRUD functionality (create, read, update, and delete) for at least one of the classes,_
   - _and setting up the project as well as providing instruction to any users so that build files and sensitive information are not tracked by Git (i.e. `.gitignore`, `appsettings.json`, `bin`, `obj`)._
 
-- _Below is a schema showing the many-to-many database relationship._
+- _Below: schema depicting the many-to-many database relationship._
 <p align="center">
 <img src="./Factory/wwwroot/img/MechanicManagerDbSchema.jpg" alt="screenshot of database schema" width="60%">
 </p>
