@@ -19,7 +19,7 @@
 
 ## Description
 
-- _Upon landing at the home page, the user is presented with lists of both existing engineers and machines in the database. If either of the lists are empty, placeholder text will be there instead. Here, the user can choose to populate either list -- engineer or machine. Clicking the engineers or machines listed allows the user to see their/its details. From here, the user may choose to edit or update details._
+- _Upon landing at the home page, the user is presented with lists of both existing engineers and machines in the database. If either of the lists are empty, placeholder text will be there instead. Here, the user can choose to populate either list -- engineer or machine. Clicking the engineers or machines listed allows the user to see their/its details. From here, the user may choose to edit details or delete the entry._
 - _The user can link objects from one class to another. For instance:_
   - _For a specified engineer, a specified machine can be added to their list, noting that the engineer is able to repair said machine._
   - _The relationship is mirrored in that an engineer is able to be added to a machine's list._
@@ -40,9 +40,9 @@
   - _CRUD functionality (create, read, update, and delete) for at least one of the classes,_
   - _and setting up the project as well as providing instruction to any users so that build files and sensitive information are not tracked by Git (i.e. `.gitignore`, `appsettings.json`, `bin`, `obj`)._
 
-- _Below: schema depicting the many-to-many database relationship._
+- _Below: Schema depicting the many-to-many database relationship._
 <p align="center">
-<img src="./Factory/wwwroot/img/MechanicManagerDbSchema.jpg" alt="screenshot of database schema" width="60%">
+<img src="./Factory/wwwroot/img/MechanicManagerDbSchema.jpg" alt="screenshot of database schema" width="70%">
 </p>
 
 ## Setup/Installation Requirements
@@ -87,7 +87,7 @@ _6. In the terminal, while in the project's production directory `Factory`, run 
 
 ## Running the Project
 
-- _Navigate to the project's production directory `Factory`. In the command line, run this command to compile and execute the web application. A new browser window should open, allowing you to interact with it._
+- _In the command line, while in the project's production directory `Factory`, run this command to compile and execute the web application. A new browser window should open, allowing you to interact with it._
 
 > ```bash
 > $ dotnet watch run
