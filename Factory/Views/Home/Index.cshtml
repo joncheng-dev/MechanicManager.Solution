@@ -13,12 +13,16 @@
     }
     else
     {
-      <ul>
-        @foreach(Engineer entry in Model["engineers"])
-        {
-          <li>@Html.ActionLink(@entry.Name, "Details", "Engineers", new { id = @entry.EngineerId })</li>
-        }
-      </ul>
+      <table class="table table-hover">
+        <tbody>
+            @foreach(Engineer entry in Model["engineers"])
+            {
+              <tr class="table-dark">
+                <td>@Html.ActionLink(@entry.Name, "Details", "Engineers", new { id = @entry.EngineerId })</td>
+              </tr>
+            }
+        </tbody>
+      </table>        
     }
   </div>
   <div class="col-6">
@@ -29,12 +33,16 @@
     }
     else
     {
-      <ul>
-        @foreach(Machine entry in Model["machines"])
-        {
-          <li>@Html.ActionLink(@entry.ModelName, "Details", "Machines", new { id = @entry.MachineId })</li>
-        }
-      </ul>
+      <table class="table table-hover">
+        <tbody>
+            @foreach(Machine entry in Model["machines"])
+            {
+              <tr class="table-dark">
+                <td>@Html.ActionLink(@entry.ModelName, "Details", "Machines", new { id = @entry.MachineId })</td>
+              </tr>
+            }
+        </tbody>
+      </table>       
     }    
   </div>  
 </div>

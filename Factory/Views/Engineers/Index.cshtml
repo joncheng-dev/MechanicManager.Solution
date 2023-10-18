@@ -11,12 +11,16 @@
 }
 else 
 {
-  <ul>
-    @foreach(Engineer entry in Model)
-    {
-      <li>@Html.ActionLink($"{entry.Name}", "Details", new {id = entry.EngineerId})</li>
-    }
-  </ul>
+  <table class="table table-hover">
+    <tbody>
+        @foreach(Engineer entry in Model)
+        {
+          <tr class="table-dark">
+            <td>@Html.ActionLink($"{entry.Name}", "Details", new {id = entry.EngineerId})</td>
+          </tr>
+        }
+    </tbody>
+  </table>      
 }
 
 <hr/>
